@@ -16,7 +16,7 @@
 #
 
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/codinalte/include
-TARGET_OTA_ASSERT_DEVICE := codinatmo,codinavid,codinanewcotmo,codinalte
+TARGET_OTA_ASSERT_DEVICE := codinalte
 
 # Board
 TARGET_BOOTLOADER_BOARD_NAME := DB8520H
@@ -51,8 +51,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # Kernel
 TARGET_KERNEL_CONFIG := cyanogenmod_codinanewcotmo_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/codinalte
-TARGET_GCC_VERSION := 4.8
-TARGET_KERNEL_USE_AOSP_TOOLCHAIN :=true
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/codinalte/shbootimg.mk
 BOARD_KERNEL_CMDLINE := "androidboot.selinux=permissive"
 BOARD_KERNEL_BASE := 0x00000000
@@ -150,7 +148,7 @@ TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 BOARD_HAS_NO_REAL_SDCARD := true
 TW_NO_USB_STORAGE := true
-TW_BRIGHTNESS_PATH := "/sys/devices/mcde_disp_s6e63m0_dsi.0/backlight/panel/brightness"
+TW_BRIGHTNESS_PATH := "/sys/devices/platform/pri_bl_ktd253/backlight/panel/brightness"
 TW_MAX_BRIGHTNESS := 255
 TW_INCLUDE_CRYPTO_SAMSUNG := true
 TW_INCLUDE_CRYPTO := true
