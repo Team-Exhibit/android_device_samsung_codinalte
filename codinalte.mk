@@ -64,7 +64,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.zygote.disable_gl_preload=true \
-    ro.bq.gpu_to_cpu_unsupported=1
+    ro.bq.gpu_to_cpu_unsupported=1 \
+    ro.ksm.default=1 \
 
 PRODUCT_PACKAGES += \
     libblt_hw
