@@ -1,6 +1,4 @@
-#
-# Copyright (C) 2013 The Android Open Source Project
-# Copyright (C) 2013 Óliver García Albertos (oliverarafo@gmail.com)
+# Copyright (C) 2009 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,9 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+# This file sets variables that control the way modules are built
+# throughout the system. It should not be used to conditionally
+# disable makefiles (the proper mechanism to control what gets
+# included in a build is to use PRODUCT_PACKAGES in a product
+# definition file).
+#
 
-LOCAL_PATH := $(call my-dir)
-
-ifneq ($(filter codinalte golden skomer,$(TARGET_DEVICE)),)
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
-endif
+$(call inherit-product, device/samsung/codinalte/codinalte.mk)
