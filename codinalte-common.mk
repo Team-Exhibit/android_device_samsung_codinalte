@@ -27,11 +27,16 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/init.samsungcodina.rc:root/init.$(TARGET_DEVICE).rc \
+    $(LOCAL_PATH)/rootdir/ueventd.samsungcodina.rc:root/ueventd.$(TARGET_DEVICE).rc \
+    $(LOCAL_PATH)/rootdir/fstab.samsungcodina:root/fstab.$(TARGET_DEVICE) \
     $(LOCAL_PATH)/rootdir/init.environ.rc:root/init.environ.rc \
+    $(LOCAL_PATH)/rootdir/init.samsungcodina.usb.rc:root/init.$(TARGET_DEVICE).usb.rc \
     $(LOCAL_PATH)/rootdir/lpm.rc:root/lpm.rc
 
 # Recovery ramdisk, libraries and modules.
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/rootdir/init.recovery.samsungcodina.rc:root/init.recovery.$(TARGET_DEVICE).rc \
     $(LOCAL_PATH)/recovery/rootdir/sbin/parted:recovery/root/sbin/parted
 
 # Graphics

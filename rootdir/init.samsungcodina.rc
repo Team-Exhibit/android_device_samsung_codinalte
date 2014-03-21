@@ -1,7 +1,7 @@
 # NOTE: This file contains ST-Ericsson related additions/modifications/deletions to init.rc
 #       Commented out lines are kept for reference.
 
-import /init.samsungcodina.usb.rc
+import /init.${ro.hardware}.usb.rc
 
 on init
 
@@ -54,8 +54,8 @@ on init
 
 on fs
 
-    mount_all /fstab.samsungcodina
-    swapon_all /fstab.samsungcodina
+    mount_all /fstab.${ro.hardware}
+    swapon_all /fstab.${ro.hardware}
     setprop ro.crypto.fuse_sdcard true
     start cspsa
 
