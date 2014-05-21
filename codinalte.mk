@@ -22,8 +22,14 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 $(call inherit-product, build/target/product/full_base_telephony.mk)
 $(call inherit-product, build/target/product/languages_full.mk)
 
-# Use the Dalvik VM specific for devices with 1024 MB of RAM
-$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+# Legacy dalvik values help memory issues in new theme engine
+	PRODUCT_PROPERTY_OVERRIDES += \
+	dalvik.vm.heapstartsize=8m \
+	dalvik.vm.heapgrowthlimit=128m \
+	dalvik.vm.heapsize=402m \
+	dalvik.vm.heaptargetutilization=0.75 \
+	dalvik.vm.heapminfree=2m \
+	dalvik.vm.heapmaxfree=8m
 
 # Inherit the proprietary vendors blobs for all codinas.
 $(call inherit-product-if-exists, vendor/samsung/codinamtr/codinamtr-vendor.mk)
