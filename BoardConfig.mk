@@ -143,6 +143,7 @@ BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/codinalte/recovery/graphics.c
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_SUPPRESS_EMMC_WIPE := true
+TARGET_USERIMAGES_USE_F2FS := true
 
 # SELinux
 #BOARD_SEPOLICY_DIRS += \
